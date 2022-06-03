@@ -24,3 +24,4 @@ Things you may want to cover:
 * ...
 # blog_rails
 # blog_rails
+# blog_rails
