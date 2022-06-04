@@ -1,0 +1,20 @@
+# Rails library built in a way to assume every thing that could 
+a programmer need. It has been crafted carfuly and it is huge that is why 
+it is important to go slowly learning the right way to get all the benifits
+of this library and if you adopted the wrong behaviors this will dicrease
+you productivity in compare to the other programmeres 
+
+# it is better to learn Ruby before start learning Rails
+# it has tow major philosophies 
+# first Don't repeat your self which means you will have access to your 
+code from any place in the project as needed
+# second convention over configuration which means the creators of this 
+library thought and crafted every step that might any programmer go through 
+and made a smart way and short code to acheive the goal
+
+# it has autoloading you don't need to use require
+
+# lib directory for extended modules
+# the only place to use require is to require module form lib directory or
+to load gem dependencies from gem file that has require: false in the gem file
+# 
