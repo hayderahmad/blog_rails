@@ -1,1 +1,12 @@
-e
+ Rails library was built to assume everything that a programmer could need. That is why it is essential to go slowly, learning the right way to get all the benefits of this library, and if you adopt the wrong behaviors, this will decrease your productivity in comparison to the other programmers 
+it is better to learn Ruby before starting learning Rails 
+it has two significant philosophies
+first, Don't repeat your self which means you will have access to variables from any place in the project as needed 
+second convention over configuration, which means the creators of this library thought and crafted every step that might any programmer go through and made an intelligent way and shortcode to achieve the goal 
+ it has autoloading you don't need to use required
+lib directory for extended modules
+ the only place to use (require) is to require module from the lib directory or to load gem dependencies from the gem file that has required: false in the gem file
+
+
+
+
