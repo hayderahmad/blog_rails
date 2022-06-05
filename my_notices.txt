@@ -6,6 +6,26 @@ second convention over configuration, which means the creators of this library t
  it has autoloading you don't need to use required
 lib directory for extended modules
  the only place to use (require) is to require module from the lib directory or to load gem dependencies from the gem file that has required: false in the gem file
+App file is where we will build our application
+Config file to configure our application
+Db file for database
+Gem file for gems
+To start the server, use bin\rails server
+To make a controller use( bin/rails generate controller controller-name action-name)
+To make a model use (bin/rails generate model model-name attribute-name: type, attribute-name: type, ….)
+To make the table in the database, we use (bin/rails db:migrate)
+To interact with the database, we use irb and to start irb session is by using (bin/rails console)
+In irb session, we can add elements to a table by using (singular-name-of-the-table = singular-name-of-the-table. new(and update the columns), then use singular-name-of-the-table. save to add the changes to the table
+And by using singular-name-of-the-table or singular-name-of-the-table.all or singular-name-of-the-table.find(), we can retrieve the elements from that table
+This <%%> tag means read the ruby code in erb files
+And this tag <%= %> is to read and return ruby code in erb files
+The flow of the code is by starting a request from a client which will hit the server on the listening channel, which will send the request to the routes which will match the action and the path which will trigger the action in that controller, which will process data or call the model to reach data in the database and return to the attribute in the action which will pass these data through that attribute to the view Html 
+ If we use (resources) in routes this will give move convention by accessing different routes through one line for the same controller
+Also (resources) sets up Path and URL helper functions to be added to the controller name to be able to access these actions under this controller without using slashes 
+To create an element in a table we need to build actions to handle creation
+We have 2 functions to do that 
+First (new) which will create the element but will not save it in the database and the made element will be used in the view to build a form
+Second (create) which will have the option of saving the built element in the database but we need to pass (redirect_to) to prevent inputing the same element multiple time tby refreshing the page and this function will wrok by making the client request a new request which will take the page to the made element for example. 
 
 
 
