@@ -16,17 +16,28 @@ To make a model use (bin/rails generate model model-name attribute-name: type, a
 To make the table in the database, we use (bin/rails db:migrate)
 To interact with the database, we use irb and to start irb session is by using (bin/rails console)
 In irb session, we can add elements to a table by using (singular-name-of-the-table = singular-name-of-the-table. new(and update the columns), then use singular-name-of-the-table. save to add the changes to the table
-And by using singular-name-of-the-table or singular-name-of-the-table.all or singular-name-of-the-table.find(), we can retrieve the elements from that table
+And by using singular-name-of-the-table or singular-name-of-the-table. all or singular-name-of-the-table. find(), we can retrieve the elements from that table
 This <%%> tag means read the ruby code in erb files
 And this tag <%= %> is to read and return ruby code in erb files
 The flow of the code is by starting a request from a client which will hit the server on the listening channel, which will send the request to the routes which will match the action and the path which will trigger the action in that controller, which will process data or call the model to reach data in the database and return to the attribute in the action which will pass these data through that attribute to the view Html 
  If we use (resources) in routes this will give move convention by accessing different routes through one line for the same controller
-Also (resources) sets up Path and URL helper functions to be added to the controller name to be able to access these actions under this controller without using slashes 
-To create an element in a table we need to build actions to handle creation
+Also (resources) set up Path and URL helper functions to be added to the controller name to be able to access these actions under this controller without using slashes 
+To create an element in a table we need to build actions to handle the creation
 We have 2 functions to do that 
 First (new) which will create the element but will not save it in the database and the made element will be used in the view to build a form
-Second (create) which will have the option of saving the built element in the database but we need to pass (redirect_to) to prevent inputing the same element multiple time tby refreshing the page and this function will wrok by making the client request a new request which will take the page to the made element for example. 
-
-
-
+Second (create) will have the option of saving the built element in the database but we need to pass (redirect_to) to prevent inputting the same element multiple times by refreshing the page and this function will work by making the client request a new request which will take the page to the made element for example. 
+Using form_with for building HTML forms
+We use the strong params private function to filter out the undesired inputs that come from the HTML request that might be for malicious activities.
+We use validation statements in the model to put restrictions on the imputed data before getting saved in the database 
+This library uses too many chaining (too many fucking dots) that I don’t know how I will remember 
+So to create a new entry we need to fill the controller with the (new and create) actions with strong prams too  and then the HTML with form builder and then the model validation process
+To update an entry we need to use the (edit and update) actions in the controller and use form builder to build the HTML 
+Instead of repeating the view code for different pages, we use something called Partials which is writing the same code on a page that has a name starting with an underscore and changing the used variables to generic variables and then we use a render method in the pages that we want them to have that code and match the generic variable to the desired variable
+We can have 2 models associated by passing the name of the other model and using the keyword references this will make the new table belongs to the old table and will put the foreign key column in the new table
+When we use the migrate function rails will migrate only the tables that have not been built yet and will add the schema of that table to the schema db
+When we add a resource for a model that belongs to another model we put the resource indented and under the resource of the old model to maintain the hierarchical relationship
+Render can iterate on each element of the given data structure 
+Concerns are used to take the duplicated logic in modules and make it accessible from a module 
+To be able to delete elements from the Many table once we delete the related element from the One table we need to use the option dependent and choose the (:destroy) option
+We can use http_basic_authenticate_with to be able to give a challenge to the user to recognize if this person is authenticated to do all the actions or some of them 
 
